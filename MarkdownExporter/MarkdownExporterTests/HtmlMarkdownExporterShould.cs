@@ -20,11 +20,11 @@ namespace MdExportTests
         }
 
         [Fact]
-        public void TransformMarkdownsSectionIntoHtmlTitle()
+        public void TransformMarkdownsTextIntoHtmlText()
         {
-            var text = "# This is a title";
+            var text = "# This is a title/r/n/r/n**This is bold text**";
             var resultText = _markdownExporter.Export(_selector, text);
-            var expectedTest = "<h1> this is a title </h1>";
+            var expectedTest = "<h1> this is a title </h1>/r/n/r/n<b>This is bold text</b>";
             expectedTest.Should().BeEquivalentTo(resultText);
         }
     }
