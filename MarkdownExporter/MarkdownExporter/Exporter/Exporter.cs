@@ -9,8 +9,14 @@ namespace MdExport.Exporter
             
         }
 
-        public abstract void AddOperations(Exporter operation);
+        public virtual void AddOperations(Exporter operation)
+        {
+            throw new NotImplementedException();
+        }
 
-        public abstract string ExportHtml(string text);
+        public virtual string ExportHtml(string text)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

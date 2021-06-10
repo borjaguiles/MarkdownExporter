@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using FluentAssertions;
 using MdExport.Exporter;
@@ -16,6 +15,7 @@ namespace MdExportTests
         public HtmlMarkdownExporterShould()
         {
             _markdownExporter = new MarkdownExporter();
+            _markdownExporter.AddOperations(new SectionExporter());
             _selector = new HtmlExportSelector();
         }
 
@@ -28,4 +28,5 @@ namespace MdExportTests
             expectedTest.Should().BeEquivalentTo(resultText);
         }
     }
+
 }
