@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdownExporter", "MarkdownExporter\MarkdownExporter.csproj", "{17E5A7AD-AF49-44E5-94EB-579939F7A40F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdownExporterTests", "MarkdownExporterTests\MarkdownExporterTests.csproj", "{007A4C18-ED6C-4424-BAE4-5F5BCE2BDD67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{17E5A7AD-AF49-44E5-94EB-579939F7A40F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17E5A7AD-AF49-44E5-94EB-579939F7A40F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17E5A7AD-AF49-44E5-94EB-579939F7A40F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007A4C18-ED6C-4424-BAE4-5F5BCE2BDD67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007A4C18-ED6C-4424-BAE4-5F5BCE2BDD67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007A4C18-ED6C-4424-BAE4-5F5BCE2BDD67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007A4C18-ED6C-4424-BAE4-5F5BCE2BDD67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
