@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MarkdownExporter\MarkdownExporter.csproj" />
+    <ProjectReference Include="..\MarkdownExporter\MdExport.csproj" />
   </ItemGroup>
 
 </Project>

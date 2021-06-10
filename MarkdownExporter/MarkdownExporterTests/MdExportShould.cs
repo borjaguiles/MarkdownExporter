@@ -1,18 +1,18 @@
 using NSubstitute;
-using MarkdownExporter.Commands.ExportFileAsFile;
-using MarkdownExporter.Contracts;
-using MarkdownExporter.CrossCutting.Command;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel.Client;
+using MdExport.Commands.ExportFileAsFile;
+using MdExport.Contracts;
+using MdExport.CrossCutting.Command;
+using MdExport.ExportTypeSelector;
 using Xunit;
 
-namespace MarkdownExporterTests
+namespace MdExportTests
 {
-    public class MarkdownExporterShould
+    public class MdExportShould
     {
         private readonly IFileManager _fileManager;
         private readonly IRequestHandler<ExportFileAsFileRequestHandler> _handler;
 
-        public MarkdownExporterShould()
+        public MdExportShould()
         {
             _fileManager = Substitute.For<IFileManager>();
             _handler = new ExportFileAsFileCommandHandler(_fileManager);
@@ -21,14 +21,15 @@ namespace MarkdownExporterTests
         [Fact]
         public void ReturnAnHtmlFormatedFileGivenAMarkdownFile()
         {
-            var expectedPath = "E:/Git/TestFiles/markdownSample.md";
+            var firstFilePath = "E:/Git/TestFiles/markdownSample.md";
             var expectedTextToSave = GetTestHtmlText();
             var testMarkdowntText = GetTestMarkdowntText();
 
-            _fileManager.GetFileAsText(Arg.Is<string>(s => s == expectedPath)).Returns(testMarkdowntText);
+            _fileManager.GetFileAsText(Arg.Is<string>(s => s == firstFilePath)).Returns(testMarkdowntText);
 
-            _handler.Handle(new ExportFileAsFileRequestHandler());
+            _handler.Handle(new ExportFileAsFileRequestHandler(firstFilePath, new HtmlExportSelector()));
 
+            var expectedPath = "E:/Git/TestFiles/markdownSample-html.html";
             _fileManager.Received(1).Create(Arg.Is<string>(s => s.Equals(expectedPath)), Arg.Is<string>(s => s == expectedTextToSave));
         }
 

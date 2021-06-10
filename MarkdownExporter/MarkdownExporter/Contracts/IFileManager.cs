@@ -1,4 +1,4 @@
-namespace MarkdownExporter.Contracts
+namespace MdExport.Contracts
 {
     public interface IFileManager
     {

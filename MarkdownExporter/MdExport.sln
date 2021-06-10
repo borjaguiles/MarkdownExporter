@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdownExporter", "MarkdownExporter\MarkdownExporter.csproj", "{17E5A7AD-AF49-44E5-94EB-579939F7A40F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdExport", "MarkdownExporter\MdExport.csproj", "{17E5A7AD-AF49-44E5-94EB-579939F7A40F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkdownExporterTests", "MarkdownExporterTests\MarkdownExporterTests.csproj", "{007A4C18-ED6C-4424-BAE4-5F5BCE2BDD67}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MdExportTests", "MarkdownExporterTests\MdExportTests.csproj", "{007A4C18-ED6C-4424-BAE4-5F5BCE2BDD67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

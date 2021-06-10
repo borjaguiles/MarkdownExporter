@@ -1,4 +1,4 @@
-namespace MarkdownExporter.CrossCutting.Command
+namespace MdExport.CrossCutting.Command
 {
     public interface IRequestHandler<T>
     {

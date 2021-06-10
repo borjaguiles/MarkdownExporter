@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace MarkdownExporter
+namespace MdExport
 {
     class Program
     {
         static void Main(string[] args)
         {
-            client.run();
             Console.WriteLine();
         }
     }
