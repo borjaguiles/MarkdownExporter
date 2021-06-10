@@ -1,22 +1,31 @@
+using System;
+using System.Collections.Generic;
 using MdExport.ExportTypeSelector;
 
 namespace MdExport.Exporter
 {
     public class MarkdownExporter : Exporter, IMultiExporter
     {
+        public List<Exporter> Operations { get; set; }
+
         public override void AddOperations(Exporter operation)
         {
-            throw new System.NotImplementedException();
+            Operations.Add(operation);
         }
 
         public override string ExportHtml(string text)
         {
-            throw new System.NotImplementedException();
+            foreach (var operation in Operations)
+            {
+                text = operation.ExportHtml(text);
+            }
+
+            return text;
         }   
 
         public string Export(IExportTypeSelector selector, string text)
         {
-            throw new System.NotImplementedException();
+            return selector.Select(this, text);
         }
     }
 }
