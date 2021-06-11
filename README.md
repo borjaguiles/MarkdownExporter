@@ -8,6 +8,8 @@ To launch the project there are 2 choices:
 - Compile and run the exe from a cmd like so: MdExport.exe -html -o X:\Folders\markdownfile.md
 - Edit the project MdExport configuration to add application arguments in the debug tag
 
+The result file will be saved in the same folder with a modified name.
+
 ## Pending
 
 - Implement new exporters
