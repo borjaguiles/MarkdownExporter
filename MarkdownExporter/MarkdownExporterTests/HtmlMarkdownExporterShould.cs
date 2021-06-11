@@ -16,6 +16,7 @@ namespace MdExportTests
         {
             _markdownExporter = new MarkdownExporter();
             _markdownExporter.AddOperations(new SectionExporter());
+            _markdownExporter.AddOperations(new BoldExporter());
             _selector = new HtmlExportSelector();
         }
 

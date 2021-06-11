@@ -16,6 +16,9 @@ namespace MdExport.Commands.ExportFileAsFile
         public ExportFileAsFileCommandHandler(IFileManager fileManager)
         {
             _fileManager = fileManager;
+            _markdownExporter = new MarkdownExporter();
+            _markdownExporter.AddOperations(new SectionExporter());
+            _markdownExporter.AddOperations(new BoldExporter());
             _filenameEndings = new Dictionary<Type, string>();
             _filenameEndings.Add(typeof(HtmlExportSelector), "-html.html");
         }

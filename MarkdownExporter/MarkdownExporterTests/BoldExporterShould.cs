@@ -10,6 +10,11 @@ namespace MdExportTests
     {
         private BoldExporter _boldExporter;
 
+        public BoldExporterShould()
+        {
+            _boldExporter = new BoldExporter();
+        }
+
         [Fact]
         public void TransformMarkdownBoldIntoHtmlBold()
         {
