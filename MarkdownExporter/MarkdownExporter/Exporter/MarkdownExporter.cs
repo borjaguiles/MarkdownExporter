@@ -6,16 +6,16 @@ namespace MdExport.Exporter
 {
     public class MarkdownExporter : Exporter, IMultiExporter
     {
-        public List<Exporter> Operations { get; set; }
+        private List<Exporter> _operations  = new List<Exporter>();
 
         public override void AddOperations(Exporter operation)
         {
-            Operations.Add(operation);
+            _operations.Add(operation);
         }
 
         public override string ExportHtml(string text)
         {
-            foreach (var operation in Operations)
+            foreach (var operation in _operations)
             {
                 text = operation.ExportHtml(text);
             }
