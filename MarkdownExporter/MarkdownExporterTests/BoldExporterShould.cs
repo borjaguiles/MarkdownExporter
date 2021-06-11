@@ -15,12 +15,12 @@ namespace MdExportTests
             _boldExporter = new BoldExporter();
         }
 
-        [Fact]
-        public void TransformMarkdownBoldIntoHtmlBold()
+        [Theory]
+        [InlineData("**This is bold**", "<b>This is bold</b>")]
+        [InlineData("# Section/r/n**This is bold**/r/n**This is also bold**", "# Section/r/n<b>This is bold</b>/r/n<b>This is also bold</b>")]
+        public void TransformMarkdownBoldIntoHtmlBold(string testText, string expectedText)
         {
-            var testText = "**This is bold**";
             var resultText = _boldExporter.ExportHtml(testText);
-            var expectedText = "<b>This is bold</b>";
             expectedText.Should().BeEquivalentTo(resultText);
         }
     }
