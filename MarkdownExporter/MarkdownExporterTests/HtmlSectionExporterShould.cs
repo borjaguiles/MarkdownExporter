@@ -25,5 +25,13 @@ namespace MdExportTests
             var resultText = _sectionExporter.ExportHtml(markdownText);
             expectedText.Should().BeEquivalentTo(resultText);
         }
+
+        [Theory]
+        [InlineData("## Section", "<h2> Section</h2>")]
+        public void ReturnHtmlSecondTitleGivenMarkdownSecondLevelSection(string markdownText, string expectedText)
+        {
+            var resultText = _sectionExporter.ExportHtml(markdownText);
+            expectedText.Should().BeEquivalentTo(resultText);
+        }
     }
 }

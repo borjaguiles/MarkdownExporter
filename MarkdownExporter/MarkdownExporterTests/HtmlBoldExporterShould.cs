@@ -6,11 +6,11 @@ using Xunit;
 
 namespace MdExportTests
 {
-    public class BoldExporterShould
+    public class HtmlBoldExporterShould
     {
         private BoldExporter _boldExporter;
 
-        public BoldExporterShould()
+        public HtmlBoldExporterShould()
         {
             _boldExporter = new BoldExporter();
         }
