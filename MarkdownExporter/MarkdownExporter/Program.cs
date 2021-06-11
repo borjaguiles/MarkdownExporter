@@ -12,7 +12,7 @@ namespace MdExport
         {
             var serviceProvider = new ServiceCollection()
                 .AddTransient<IFileManager, FileManager>()
-                .AddTransient<IRequestHandler<ExportFileAsFileRequestHandler>>()
+                .AddTransient<IRequestHandler<ExportFileAsFileRequestHandler>, ExportFileAsFileCommandHandler>()
                 .AddTransient<IMdExport, MdExport>()
                 .BuildServiceProvider();
 

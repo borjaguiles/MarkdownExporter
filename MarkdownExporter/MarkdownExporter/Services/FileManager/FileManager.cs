@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using MdExport.Contracts;
 
 namespace MdExport.Services.FileManager
@@ -7,12 +8,12 @@ namespace MdExport.Services.FileManager
     {
         public void Create(string filePath, string textToSave)
         {
-            throw new NotImplementedException();
+            File.WriteAllText(filePath, textToSave);
         }
 
         public string GetFileAsText(string filePath)
         {
-            throw new NotImplementedException();
+            return File.ReadAllText(filePath);
         }
     }
 }

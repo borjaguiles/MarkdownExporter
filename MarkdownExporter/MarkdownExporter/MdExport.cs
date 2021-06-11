@@ -15,6 +15,7 @@ namespace MdExport
         public MdExport(IRequestHandler<ExportFileAsFileRequestHandler> handler)
         {
             _handler = handler;
+            selectionary = new Dictionary<string, IExportTypeSelector>();
             selectionary.Add("-html", new HtmlExportSelector());
         }
 

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MdExport": {
+      "commandName": "Project",
+      "commandLineArgs": "-html -o E:/Git/TestFiles/markdownfile.md"
+    }
+  }
+}
