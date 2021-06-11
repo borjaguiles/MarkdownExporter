@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using MdExport.Contracts;
 using MdExport.ExportTypeSelector;
 
 namespace MdExport.Exporter

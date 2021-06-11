@@ -1,5 +1,5 @@
 
-namespace MdExport.ExportTypeSelector
+namespace MdExport.Contracts
 {
     public interface IExportTypeSelector
     {

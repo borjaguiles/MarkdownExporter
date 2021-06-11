@@ -1,3 +1,4 @@
+using MdExport.Contracts;
 using MdExport.Exporter;
 
 namespace MdExport.ExportTypeSelector

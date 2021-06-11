@@ -1,6 +1,6 @@
 using MdExport.ExportTypeSelector;
 
-namespace MdExport.Exporter
+namespace MdExport.Contracts
 {
     public interface IMultiExporter
     {
