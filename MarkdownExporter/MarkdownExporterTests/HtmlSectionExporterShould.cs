@@ -11,6 +11,11 @@ namespace MdExportTests
     {
         private SectionExporter _sectionExporter;
 
+        public HtmlSectionExporterShould()
+        {
+            _sectionExporter = new SectionExporter();
+        }
+
         [Fact]
         public void ReturnHtmlTitleGivenMarkdownFirstLevelSection()
         {
