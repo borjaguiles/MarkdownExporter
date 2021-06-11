@@ -7,22 +7,21 @@ namespace MdExport.Exporter
         private const int TitleCharacterOpenDifference = 3;
         private const int TitleCharacterCloseDifference = 4;
         private const char SectionCharacter = '#';
-        private const int SectionCharacterLength = 1;
 
         public override string ExportHtml(string text)
         {
             int index = 0;
-            while (index <= text.Length)
+            while (index < text.Length)
             {
                 var startOfNextSection = text.Substring(index).IndexOf(SectionCharacter);
                 if (startOfNextSection < 0)
                     break;
                 startOfNextSection += index;
-                var sectionlevel = FindSectionLevel(startOfNextSection, text);
+                var sectionLevel = FindSectionLevel(startOfNextSection, text);
                 var sectionEnd = GetNextEndOfLineOrFile(startOfNextSection, text);
-                text = text.Insert(sectionEnd, GetHtmlTitleEndingTag(sectionlevel))
-                    .Remove(startOfNextSection,  sectionlevel)
-                    .Insert(startOfNextSection, GetHtmlTitleOpeningTag(sectionlevel));
+                text = text.Insert(sectionEnd, GetHtmlTitleEndingTag(sectionLevel))
+                    .Remove(startOfNextSection,  sectionLevel)
+                    .Insert(startOfNextSection, GetHtmlTitleOpeningTag(sectionLevel));
                 index = sectionEnd + TitleCharacterOpenDifference + TitleCharacterCloseDifference;
             }
 
@@ -53,7 +52,7 @@ namespace MdExport.Exporter
         {
             var nextSegment = text.Substring(startOfNextSection);
             
-            var endOfSection = nextSegment.IndexOf("\r\n");
+            var endOfSection = nextSegment.IndexOf(Environment.NewLine);
             if (endOfSection == -1)
             {
                 return text.Length;
