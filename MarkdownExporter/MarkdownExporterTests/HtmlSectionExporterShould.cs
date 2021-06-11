@@ -28,6 +28,7 @@ namespace MdExportTests
 
         [Theory]
         [InlineData("## Section", "<h2> Section</h2>")]
+        [InlineData("## Section/r/n### Third Section", "<h2> Section</h2>/r/n<h3> Third Section</h3>")]
         public void ReturnHtmlSecondTitleGivenMarkdownSecondLevelSection(string markdownText, string expectedText)
         {
             var resultText = _sectionExporter.ExportHtml(markdownText);
