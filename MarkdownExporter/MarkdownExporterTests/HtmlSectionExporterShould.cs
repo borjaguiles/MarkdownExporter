@@ -18,8 +18,8 @@ namespace MdExportTests
 
         [Theory]
         [InlineData("# Section", "<h1> Section</h1>")]
-        [InlineData("# Section/r/n/r/n# SecondSection", "<h1> Section</h1>/r/n/r/n<h1> SecondSection</h1>")]
-        [InlineData("# Section/r/n/r/nThis is a normal paragraph/r/n/r/n# SecondSection", "<h1> Section</h1>/r/n/r/nThis is a normal paragraph/r/n/r/n<h1> SecondSection</h1>")]
+        [InlineData("# Section\r\n\r\n# SecondSection", "<h1> Section</h1>\r\n\r\n<h1> SecondSection</h1>")]
+        [InlineData("# Section\r\n\r\nThis is a normal paragraph\r\n\r\n# SecondSection", "<h1> Section</h1>\r\n\r\nThis is a normal paragraph\r\n\r\n<h1> SecondSection</h1>")]
         public void ReturnHtmlTitleGivenMarkdownFirstLevelSection(string markdownText, string expectedText)
         {
             var resultText = _sectionExporter.ExportHtml(markdownText);
@@ -28,7 +28,7 @@ namespace MdExportTests
 
         [Theory]
         [InlineData("## Section", "<h2> Section</h2>")]
-        [InlineData("## Section/r/n### Third Section", "<h2> Section</h2>/r/n<h3> Third Section</h3>")]
+        [InlineData("## Section\r\n### Third Section", "<h2> Section</h2>\r\n<h3> Third Section</h3>")]
         public void ReturnHtmlSecondTitleGivenMarkdownSecondLevelSection(string markdownText, string expectedText)
         {
             var resultText = _sectionExporter.ExportHtml(markdownText);

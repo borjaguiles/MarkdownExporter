@@ -20,13 +20,13 @@ namespace MdExportTests
             _selector = new HtmlExportSelector();
         }
 
-        [Fact]
-        public void TransformMarkdownsTextIntoHtmlText()
+        [Theory]
+        [InlineData("# Section\r\n Hello I am **bold**\r\n", "<h1> Section</h1>\r\n Hello I am <b>bold</b>\r\n")]
+        [InlineData("# Section\r\n Hello I am **bold**\r\n## Second Section\r\n**I am also bold**", "<h1> Section</h1>\r\n Hello I am <b>bold</b>\r\n<h2> Second Section</h2>\r\n<b>I am also bold</b>")]
+        public void TransformMarkdownsTextIntoHtmlText(string markdownText, string expectedText)
         {
-            var text = "# This is a title/r/n/r/n**This is bold text**";
-            var resultText = _markdownExporter.Export(_selector, text);
-            var expectedTest = "<h1> This is a title</h1>/r/n/r/n<b>This is bold text</b>";
-            expectedTest.Should().BeEquivalentTo(resultText);
+            var resultText = _markdownExporter.Export(_selector, markdownText);
+            expectedText.Should().BeEquivalentTo(resultText);
         }
     }
 

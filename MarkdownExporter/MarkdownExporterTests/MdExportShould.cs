@@ -35,7 +35,7 @@ namespace MdExportTests
 
         private static string GetTestMarkdowntText()
         {
-            return "# Section 1\r\n\r\nSome **(bold) introduction** to Section 1.\r\n\r\n## Section 1.1\r\n\r\nA text describing Section 1.1\r\n\r\nSome conclusion to Section 1.\r\n\r\n# Section 2\r\n\r\nAn introduction to Section 2.\r\n\r\nSome conclusion to Section 2.;";
+            return "# Section 1\r\n\r\nSome **(bold) introduction** to Section 1.\r\n\r\n## Section 1.1\r\n\r\nA text describing Section 1.1\r\n\r\nSome conclusion to Section 1.\r\n\r\n# Section 2\r\n\r\nAn introduction to Section 2.\r\n\r\nSome conclusion to Section 2.";
         }
 
         private static string GetTestHtmlText()

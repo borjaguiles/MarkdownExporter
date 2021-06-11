@@ -17,8 +17,8 @@ namespace MdExport.Exporter
                 var startOfNextSection = text.Substring(index).IndexOf(SectionCharacter);
                 if (startOfNextSection < 0)
                     break;
-                var sectionlevel = FindSectionLevel(startOfNextSection + index, text);
                 startOfNextSection += index;
+                var sectionlevel = FindSectionLevel(startOfNextSection, text);
                 var sectionEnd = GetNextEndOfLineOrFile(startOfNextSection, text);
                 text = text.Insert(sectionEnd, GetHtmlTitleEndingTag(sectionlevel))
                     .Remove(startOfNextSection,  sectionlevel)
@@ -51,15 +51,15 @@ namespace MdExport.Exporter
 
         private int GetNextEndOfLineOrFile(int startOfNextSection, string text)
         {
-            var forwardedText = text.Substring(startOfNextSection);
+            var nextSegment = text.Substring(startOfNextSection);
             
-                var endOfSection = forwardedText.IndexOf("/r/n");
-                if (endOfSection == -1)
-                {
-                    return text.Length;
-                }
+            var endOfSection = nextSegment.IndexOf("\r\n");
+            if (endOfSection == -1)
+            {
+                return text.Length;
+            }
 
-                return endOfSection;
+            return endOfSection + startOfNextSection;
         }
     }
 }
